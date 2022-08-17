@@ -133,7 +133,7 @@ wpcr3.submit = function(e) {
 	wpcr3.ajaxPost(parent, ajaxData, function(err, rtn) {
 		if (err) { return; }
 		
-		alert('Thank you! Your review has been received and will be posted soon.');
+		alert('投稿ありがとうございます！承認され次第当サイトで公開させていただきます。');
 		$(window).scrollTop(0);
 		wpcr3.clearFields();
 		parent.find(".wpcr3_cancel_btn").click();

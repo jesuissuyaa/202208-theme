@@ -364,7 +364,7 @@ class WPCustomerReviews3 {
 			$this->param($params, $review);
 			
 			if ($this->options['standard_fields']['fname']['show'] == 0 || $review[$this->prefix.'_review_name'] == '') {
-				$review[$this->prefix.'_review_name'] = 'Anonymous';
+				$review[$this->prefix.'_review_name'] = 'ゲスト';
 			}
 			
 			if ($this->options['standard_fields']['ftitle']['show'] == 0) {
@@ -500,7 +500,7 @@ class WPCustomerReviews3 {
 		
 		$post_date = explode(" ",$post->post_date);
 		$out['post_date'] = $post_date[0];
-		$out['post_date'] = date("M j, Y", strtotime($out['post_date']));
+		$out['post_date'] = date("Y-m-d", strtotime($out['post_date']));
 		
 		return $out;
 	}
@@ -886,7 +886,7 @@ class WPCustomerReviews3 {
     }
 	
 	function generateTitle($fname) {
-		$fname = (strlen($fname) === 0) ? 'Anonymous' : $fname;
+		$fname = (strlen($fname) === 0) ? 'ゲスト' : $fname;
 		$datetime = date('m/d/Y h:i');
 		return "{$fname} @ {$datetime}";
 	}
