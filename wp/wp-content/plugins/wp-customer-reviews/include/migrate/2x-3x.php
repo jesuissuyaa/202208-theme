@@ -189,7 +189,7 @@ function wpcr3_migrate_2x_3x(&$this2, $current_dbversion) {
 		else if ($review->status == '1') { $status = 'publish'; }
 		else if ($review->status == '2') { $status = 'trash'; }
 		
-		$name = (strlen($review->reviewer_name) === 0) ? 'Anonymous' : $review->reviewer_name;
+		$name = (strlen($review->reviewer_name) === 0) ? 'ゲスト' : $review->reviewer_name;
 		$datetime = date('m/d/Y h:i', strtotime($review->date_time));
 		$title = "{$name} @ {$datetime}";
 		
